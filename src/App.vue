@@ -1,32 +1,35 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="home">
+    <router-link :to="{name:'Home'}">Home</router-link>
+    <p>|</p>
+    <router-link :to="{name:'Member'}">About</router-link>
+    <h2>2</h2>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<script>
+export default {
+  methods: {
+    transition() {
+      this.$router.push({ name: "Member" });
+    }
+  }
+};
+</script>
+
+<style scoped>
+.home {
   text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.home router-link {
+  display: flex;
+  margin: 0px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.home p {
+  display: flex;
+  margin: 0px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
